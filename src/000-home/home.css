@@ -1,0 +1,15 @@
+body, #root {
+  @apply w-full;
+}
+
+.home {
+  @apply flex items-center flex-col w-full gap-4 h-screen text-slate-300 bg-slate-800 p-4;
+
+  .cart-cont {
+    @apply flex justify-center flex-wrap w-full gap-4;
+  }
+
+  .cart {
+    @apply flex-center gap-2 text-center w-[calc(100%/1-1rem)] sm:w-[calc(100%/2-1rem)] md:w-[calc(100%/3-1rem)] xl:w-[calc(100%/4-1rem)] 2xl:w-[calc(100%/5-1rem)] bg-sky-950 border border-sky-900 rounded-lg shadow-lg py-6;
+  }
+}

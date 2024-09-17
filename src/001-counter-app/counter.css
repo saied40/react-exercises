@@ -1,0 +1,11 @@
+html {
+  font-size: 20px;
+}
+
+body {
+  @apply flex-center h-screen text-slate-300 bg-slate-900;
+}
+
+.btn {
+  @apply bg-transparent border text-2xl size-10 rounded-full flex-center;
+}
