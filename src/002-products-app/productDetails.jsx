@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { data } from './data';
+import { Helmet } from 'react-helmet';
 
 export default function ProductDetails() {
   const { productSlog } = useParams();
@@ -27,28 +28,33 @@ export default function ProductDetails() {
   };
 
   return (
-    <div className="m-8 flex flex-col items-start gap-4">
-      <h1 className="text-5xl font-semibold">{product.name}</h1>
-      <p className="text-xl font-medium text-gray-400">
-        {product.description} + Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Laborum placeat minus magnam doloremque! Sequi odio
-        consequuntur ut tempore natus porro cupiditate distinctio veniam
-        obcaecati repellat nulla, nobis voluptate, praesentium in!
-      </p>
-      <div className="grid-parent my-4">
-        {product.images.map((img, i) => (
-          <div
-            className="grid-child h-60 bg-no-repeat transition-all duration-300 bg-center bg-[length:100%]"
-            style={{ backgroundImage: `url(${img})` }}
-            key={i}
-            onMouseEnter={handleMouseMove} //! no need for zoomStart() function
-            onMouseLeave={handleZoomEnd}
-            onMouseMove={handleMouseMove}
-          >
-            {/* <img src={img} alt={`${product.name} - ${i}`} className="" onMouseOver={mouseOver} /> */}
-          </div>
-        ))}
+    <>
+      <Helmet>
+        <title>{product.name} || 002 Products App || {product.name}</title>
+      </Helmet>
+      <div className="m-8 flex flex-col items-start gap-4">
+        <h1 className="text-5xl font-semibold">{product.name}</h1>
+        <p className="text-xl font-medium text-gray-400">
+          {product.description} + Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Laborum placeat minus magnam doloremque! Sequi odio
+          consequuntur ut tempore natus porro cupiditate distinctio veniam
+          obcaecati repellat nulla, nobis voluptate, praesentium in!
+        </p>
+        <div className="grid-parent my-4">
+          {product.images.map((img, i) => (
+            <div
+              className="grid-child h-60 bg-no-repeat transition-all duration-300 bg-center bg-[length:100%] cursor-zoom-in"
+              style={{ backgroundImage: `url(${img})` }}
+              key={i}
+              onMouseEnter={handleMouseMove} //! no need for zoomStart() function
+              onMouseLeave={handleZoomEnd}
+              onMouseMove={handleMouseMove}
+            >
+              {/* <img src={img} alt={`${product.name} - ${i}`} className="" onMouseOver={mouseOver} /> */}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };

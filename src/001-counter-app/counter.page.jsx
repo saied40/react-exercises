@@ -17,7 +17,7 @@ export default function CounterApp() {
   return (
     <>
       <Helmet>
-        <title>001 Counter App | {WEBSITE_TITLE}</title>
+        <title>001 Counter App || {WEBSITE_TITLE}</title>
         <style>{`body { display: flex; align-items: center; justify-content: center; }`}</style>
       </Helmet>
       <div className="text-center w-fit m-auto flex flex-col items-center gap-6 *:w-full">
