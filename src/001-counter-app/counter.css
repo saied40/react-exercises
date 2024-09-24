@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  @apply flex-center h-screen text-slate-300 bg-slate-900;
+  @apply h-screen text-slate-300 bg-slate-900;
 }
 
 .btn {

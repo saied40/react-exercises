@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import { Helmet } from "react-helmet";
 import { WEBSITE_TITLE } from '../constants';
 
-export default function Home() {
+export default function HomePage() {
   const appsList = [
     { id: 1, name: "Counter App", href: "/counter" },
+    { id: 2, name: "Products App", href: "/products" },
   ];
 
   return (
@@ -14,11 +15,11 @@ export default function Home() {
       <Helmet>
         <title>{WEBSITE_TITLE}</title>
       </Helmet>
-      <div className="home">
+      <div className="home container">
         <h1 className="">React Exercises</h1>
-        <div className="cart-cont">
+        <div className="grid-parent">
           {appsList.map((app) => (
-            <Link to={app.href} className="cart" key={app.id}>
+            <Link to={app.href} className="grid-child" key={app.id}>
               <h2>
                 #{app.id} - {app.name}
               </h2>

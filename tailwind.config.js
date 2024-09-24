@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx}"],
   theme: {
-    extend: {},
+    extend: {
+      container: {
+        center: true,
+        padding: "2rem",
+      },
+    },
   },
   plugins: [
     ({ addComponents }) => {
@@ -15,14 +20,18 @@ module.exports = {
           "@media (max-width: 768px)": { fontSize: "10px" }, // max md
           "@media (max-width: 450px)": { fontSize: "9px" }, // phone screen
         },
-        ".container": {
-          width: "80%",
-          margin: "0 auto",
-        },
         ".flex-center": {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+        },
+        ".stretched-link": {
+          "&::after": {
+            content: "''",
+            position: "absolute",
+            inset: "0",
+            zIndex: "1",
+          },
         },
       });
     },

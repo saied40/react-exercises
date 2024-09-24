@@ -1,23 +1,24 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import "./counter.css";
-import { WEBSITE_TITLE } from '../constants';
+import { WEBSITE_TITLE } from "../constants";
 
-export default function Counter() {
+export default function CounterApp() {
   const [counter, setCounter] = useState(0);
   const numInput = useRef(null);
 
-  const handleCounterChange = (method='+'||'-') => {
+  const handleCounterChange = (method = "+" || "-") => {
     if (!numInput.current || !numInput.current.value) return;
     const value = parseInt(numInput.current.value, 10);
-    setCounter(counter + (method === '+' ? value : -value));
-    numInput.current.value = '';
+    setCounter(counter + (method === "+" ? value : -value));
+    numInput.current.value = "";
   };
 
   return (
     <>
       <Helmet>
         <title>001 Counter App | {WEBSITE_TITLE}</title>
+        <style>{`body { display: flex; align-items: center; justify-content: center; }`}</style>
       </Helmet>
       <div className="text-center w-fit m-auto flex flex-col items-center gap-6 *:w-full">
         <h1>#01 - Counter App</h1>
@@ -66,4 +67,4 @@ export default function Counter() {
       </div>
     </>
   );
-};
+}
